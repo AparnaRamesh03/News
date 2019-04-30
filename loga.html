@@ -1,0 +1,193 @@
+<html>
+<head>
+<script> 
+function validate()                                    
+{ 
+    var name = document.forms["registration form"]["name"];
+    var username = document.forms["registration form"]["uname"];    
+    var email = document.forms["registration form"]["Email"]; 
+
+    var phone = document.forms["registration form"]["phoneno"];    
+    var password1 = document.forms["registration form"]["pwd1"];  
+    var password2 = document.forms["registration form"]["pwd2"];
+    
+     var designation =  document.forms["registration form"]["desig"];
+    
+   
+    if (name.value == "")                                  
+    { 
+        window.alert("Please enter your name."); 
+        name.focus(); 
+        return false; 
+    } 
+    if (username.value == "")                                  
+    { 
+        window.alert("Please enter your username."); 
+        username.focus(); 
+        return false; 
+    } 
+       
+    if (email.value == "")                                   
+    { 
+        window.alert("Please enter a valid e-mail address."); 
+        email.focus(); 
+        return false; 
+    } 
+   
+    if (email.value.indexOf("@", 0) < 0)                 
+    { 
+        window.alert("Please enter a valid e-mail address."); 
+        email.focus(); 
+        return false; 
+    } 
+   
+    if (email.value.indexOf(".", 0) < 0)                 
+    { 
+        window.alert("Please enter a valid e-mail address."); 
+        email.focus(); 
+        return false; 
+    } 
+
+   
+    if (phone.value == ""  || isNaN(phone.value))                          
+    { 
+        window.alert("Please enter your telephone number."); 
+        phone.focus(); 
+        return false; 
+    } 
+    if (password1.value == "")                        
+    { 
+        window.alert("Please enter your password"); 
+        password1.focus(); 
+        return false; 
+    } 
+    if (password2.value == "")                        
+    { 
+        window.alert("Please conform your password"); 
+        password2.focus(); 
+        return false; 
+    } 
+   if(password2.value==password1.value)
+   {
+   password2.style.backgroundColor="green";
+   }
+   if(password2.value!=password1.value)
+   {
+   password2.style.backgroundColor="red";
+   password2.focus();
+   return false;
+   }
+if (designation.selectedIndex < 1)                  
+    { 
+        alert("Please select your designation."); 
+        designation.focus(); 
+        return false; 
+    } 
+   
+    return true;
+   
+}</script> 
+<script>
+function openlogin() {
+  document.getElementById("login1").style.display = "block";
+}
+
+function openregister() {
+  document.getElementById("register1").style.display = "block";
+}
+function h1()
+{
+document.getElementByClassName("close").style.display = "block";
+}
+window.onclick = function(event) {
+  if (event.target == log) {
+    log.style.display = "none";
+  }
+}
+</script>
+<style>
+.log{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+/* Modal Content */
+.log11 {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+</head>
+<body bgcolor="crimson">
+<h1 align="center">WELCOME TO SCARLET</h1>
+<img src="scar.jpg" width="1350px" height="300px">
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<table align="center">
+<tr><center>
+<button class="open-login" onclick="openregister()">Register</button>
+</td>
+</tr></center>
+</table>
+<div id="login1" class="log">
+<div id="login11" class="log11">
+<span class="close" onclick="h1()" id="m1">&times;</span>
+</div>
+</div>
+<div id="register1" class="log">
+<div id="register11" class="log11">
+<span class="close" id="m2" onclick="h1()">&times;</span>
+<form name="registration form" id="register form" action="welcome.html" align="center" onsubmit="return validate()" method="post">
+<center>
+<h1>REGISTER TO SCARLET</h1>
+<table allign="center">
+<tr><td>Name</td><td><input type="text" name="name" onkeypress="return((event.charCode>64 && event.charCode<91)||(event.charCode>96 && event.charCode<123))"></td></tr>
+<tr><td>Username</td><td><input type="text" name="uname"></td></tr>
+<tr><td>Email Id</td><td><input type="e-mail" name="Email"></td></tr> 
+<tr><td>Date Of Birth</td><td><input type="date" name="dob"></td></tr>
+
+
+<tr><td>Gender</td><td><input type="radio" name="Gender" value="Male">Male<input type="radio" name="Gender" value="Female">Female</td></tr>
+<tr><td>designation</td><td><select name="desig" id="desig"><option value="working">working</option><option value="non working">non working</option></td></tr>
+
+<tr><td>Mobile Number</td><td><input type="text" name="phoneno" size="10"></td></tr>
+<tr><td>Create Password</td><td><input type="password" name="pwd1"></td></tr>
+<tr><td>Conform Password</td><td><input type="password" name="pwd2"></td></tr>
+<tr><td><input type="submit" name="submit" id="smt" value="submit"></td><td><input type="reset"  name="reset" id="smt" value="reset"></td></tr>
+</center>
+</table>
+</form>
+</div>
+</div>
+</body>
+</html>

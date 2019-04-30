@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+     <body bgcolor="crimson" text="black" font="arial">
+     <center><h1>Welcome To Scarlet</h1></center>
+     <center>
+     <img src="scar.jpg" alt="scarlet" width="900" height="400">
+     </center>
+     <br><br><br><br><br>Date and Time:
+     <p id="demo"></p>
+<script>
+var d = new Date();
+d.setFullYear(2019);
+document.getElementById("demo").innerHTML = d;
+</script>
+<button onclick="myFunction()">Did You Know?</button>
+<p id="dem"></p>
+<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="thinking.png" alt="thinking" width="50" height="50">
+<script>
+function myFunction() {
+  var hour = new Date().getHours(); 
+  var greeting;
+  if (hour < 18) {
+    greeting = "Crocodiles are fast on their feet but can't turn very well. If make sure you are running in Zig Zag if one is chasing you!! Have a Good day!!";
+  } else {
+    greeting = "Crocodiles are fast on their feet but can't turn very well. If make sure you are running in Zig Zag if one is chasing you!! Have a Good evening!!";
+  }
+  document.getElementById("dem").innerHTML = greeting;
+}
+function bigImg(x) {
+  x.style.height = "64px";
+  x.style.width = "64px";
+}
+
+function normalImg(x) {
+  x.style.height = "32px";
+  x.style.width = "32px";
+}
+</script>
+<br>
+<br>
+<br>
+<br>
+Care To Rate Us?
+Rate each field out of 5
+<br>
+Content of Magazine:<input type="text" id="value1" name="value1" value=""/><br>
+Ease of access  :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" id="value2" name="value2" value=""/><br>
+<input type="button" name="Sumbit" value="Click here" onclick="addNumbers()"/><br>
+Total Rating= <input type="text" id="answer" name="answer" value=""/>
+<br><br><br><br><br><br><br><br>
+<script language="javascript">
+                function addNumbers()
+                {
+                        var val1 = parseInt(document.getElementById("value1").value);
+                        var val2 = parseInt(document.getElementById("value2").value);
+                        var ansD = document.getElementById("answer");
+                        ansD.value = val1 + val2;
+                }
+        </script>
+Mail us for feedback and queries
+<form action="mail1.php" method="post">
+From:&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="fromail" id="fromail"/><br>
+TO: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="tomail" id="tomail"/><br>
+CC: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="ccmail" id="ccmail"/><br>
+BCC:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="bccmail" id="bccmail"/><br>
+SUBJECT:<input type="text" name="subject" id="subject"/><br>
+BODY:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="body" id="body"/><br>
+<input type="submit"></input>
+</form>
+</body>
+</html>
