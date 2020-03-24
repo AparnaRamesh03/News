@@ -1,6 +1,4 @@
 # aparna03.github.io
-git init
-git add README.md
-git commit -m "first commit"
-git remote add origin https://github.com/Desktop/aparna/aparna03.github.io
-git push -u origin master
+
+An onfront of a webpage which shows all kinds of information from current news in Science to Entertainment.
+The images given can be changed accordingly and the placed in the folder accordingly.
